@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Weather
+   public class Weather
     {
         public int temperature;
         public Random rnd = new Random();
@@ -15,6 +15,8 @@ namespace LemonadeStand
         public string Cloudy = "Cloudy";
         public string Sunny = "Sunny";
         public string Rainy = "Rainy";
+        public int potentialCustomerNumber;
+        public int resultPotentialCustomerNumber;
 
         public Weather()
         {
@@ -31,7 +33,29 @@ namespace LemonadeStand
         {
             temperature = rnd.Next(50, 101);
             Console.WriteLine(temperature+ " degrees");
-            return temperature;
+
+            if (temperature <= 69)
+            {
+                potentialCustomerNumber = 100;
+                Console.WriteLine(potentialCustomerNumber + " potential customers");
+            }
+            else if (temperature <= 89)
+            {
+                potentialCustomerNumber = 150;
+                Console.WriteLine(potentialCustomerNumber + " potential customers");
+            }
+            else if (temperature <= 94)
+            {
+                potentialCustomerNumber = 175;
+                Console.WriteLine(potentialCustomerNumber + " potential customers");
+            }
+            else if (temperature >= 95)
+            {
+                potentialCustomerNumber = 200;
+                Console.WriteLine(potentialCustomerNumber + " potential customers");
+            }
+            int resultPotentialCustomerNumber = potentialCustomerNumber;
+            return resultPotentialCustomerNumber;
         }
 
         public void WeatherConditionGenerator()

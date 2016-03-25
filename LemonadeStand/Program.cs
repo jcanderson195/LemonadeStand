@@ -10,9 +10,14 @@ namespace LemonadeStand
     {
         static void Main(string[] args)
         {
-
             Weather tempGenerator = new Weather();
             tempGenerator.TemperatureGenerator();
+
+            Console.WriteLine();
+
+            Customer potentialCustomers = new Customer();
+            potentialCustomers.GetPotentialCustomerNumber();
+
 
             Console.WriteLine();
 

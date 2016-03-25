@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Customer
+    public class Customer
     {
-         
+        
+        Weather retrievePotentialCustomerNum = new Weather();
+
         public Customer()
         {
             //Customer
@@ -29,5 +31,13 @@ namespace LemonadeStand
                     //generate random number of each customer type from number of customers to actually buy lemonade
 
         }
+
+        public void GetPotentialCustomerNumber()
+        {
+
+            retrievePotentialCustomerNum.TemperatureGenerator();
+            
+        }
+        
     }
 }
