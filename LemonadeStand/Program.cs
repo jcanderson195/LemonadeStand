@@ -10,6 +10,15 @@ namespace LemonadeStand
     {
         static void Main(string[] args)
         {
+
+            Weather tempGenerator = new Weather();
+            tempGenerator.TemperatureGenerator();
+
+            Console.WriteLine();
+
+            Weather newCondition = new Weather();
+            newCondition.WeatherConditionGenerator(); 
+
         }
     }
 }

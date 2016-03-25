@@ -18,6 +18,30 @@ namespace LemonadeStand
         public void DayOption()
         {
             //class for choosing how many days you want to operate your lemonade stand
+            Console.WriteLine("Since this is a beta form Lemonade Stand, you only have the option to play for 7 days. Is that okay with you?");
+            Console.WriteLine();
+            Console.WriteLine("1. Yes");
+            Console.WriteLine("2. No");
+
+            int choice;
+            choice = Convert.ToInt32(Console.ReadLine());
+
+            if (choice == 1)
+            {
+                //insert function for store operation
+            }
+            else if (choice == 2)
+            {
+                Console.WriteLine("Thank you for playing Lemonade Stand!");
+                Environment.Exit(0);
+            }
+            else
+            {
+                Console.WriteLine("I'm sorry I don't recognize that command. Please type 1 or 2 for your answer!");
+                DayOption();
+
+            }
+
         }
 
         

@@ -8,6 +8,13 @@ namespace LemonadeStand
 {
     class Weather
     {
+        public int temperature;
+        public Random rnd = new Random();
+        public string weatherCondition;
+        public string Hazy = "Hazy";
+        public string Cloudy = "Cloudy";
+        public string Sunny = "Sunny";
+        public string Rainy = "Rainy";
 
         public Weather()
         {
@@ -19,6 +26,36 @@ namespace LemonadeStand
             //90 degrees = 175 potential customers  (if temperature is >= 90, result is 175 potential customers)
             //95 degrees or higher = 200 potential customers (if temperature is >=95, result is 200 potential customers)
         }
+
+        public int TemperatureGenerator()
+        {
+            temperature = rnd.Next(50, 101);
+            Console.WriteLine(temperature+ " degrees");
+            return temperature;
+        }
+
+        public void WeatherConditionGenerator()
+        {
+            int weatherCondition = rnd.Next(1,5);
+            
+            switch (weatherCondition)
+            {
+                case 1:
+                    Console.WriteLine(Hazy);
+                    break;
+                case 2:
+                    Console.WriteLine(Cloudy);
+                    break;
+                case 3:
+                    Console.WriteLine(Sunny);
+                    break;
+                case 4:
+                    Console.WriteLine(Rainy);
+                    break;
+            }  
+
+        }
+        
 
     }
 }
