@@ -24,11 +24,17 @@ namespace LemonadeStand
             //Weather newCondition = new Weather();
             //newCondition.WeatherConditionGenerator();
 
-            Store purchase = new Store();
-            purchase.PurchaseCups();
-            purchase.PurchaseIceCubes();
-            purchase.PurchaseCupsofSugar();
-            purchase.PurchaseLemons();
+            //Store purchase = new Store();
+            //purchase.PurchaseCups();
+            //purchase.PurchaseIceCubes();
+            //purchase.PurchaseCupsofSugar();
+            //purchase.PurchaseLemons();
+
+            Store newPurchase = new Store();
+            newPurchase.PurchasedGoods();
+
+            
+
 
         }
     }

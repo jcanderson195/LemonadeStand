@@ -26,7 +26,7 @@ namespace LemonadeStand
         public int lemonsBought;
         public double lemonsPriceTotal;
         public double lemonsPrice;
-        public double totalAmountForGoods;
+        
 
         public Store()
         {
@@ -37,10 +37,7 @@ namespace LemonadeStand
             //purchase lemons function (insert: user enters amount of lemons, that is multiplied by pre-determined amount($) for lemons, thats subtracted from money balance)
         }
 
-        public void StoreOperations()
-        {
-
-        }
+        
 
         public double GetWalletBalance()
         {
@@ -52,7 +49,7 @@ namespace LemonadeStand
         {
             //work out function for package of cups instead of individual
             GetWalletBalance();
-            Console.WriteLine("Please enter how many cups you would like to buy: 5 cents each ");
+            Console.WriteLine("Please enter how many cups you would like to buy: 5 cents each! ");
             cupsInput = Convert.ToInt32(Console.ReadLine());
             cupsBought = cupsInput;
             cupsPrice = 0.05;
@@ -62,6 +59,9 @@ namespace LemonadeStand
             Console.WriteLine("You bought "+cupsBought+ " cups for "+cupsPriceTotal+ " dollar(s)." );
 
             Console.WriteLine("Your wallet balance is now "+ newWalletBalance+ " dollar(s).");
+            Console.WriteLine();
+
+            CurrentInventory();
             Console.WriteLine("----------------------------------------------------");
             return newWalletBalance;
 
@@ -71,7 +71,7 @@ namespace LemonadeStand
         {
             GetWalletBalance();
 
-            Console.WriteLine("Please enter how many ice cubes you would like to buy: 5 cents each  ");
+            Console.WriteLine("Please enter how many ice cubes you would like to buy: 5 cents each!  ");
             iceCubeInput = Convert.ToInt32(Console.ReadLine());
             iceCubeBought = iceCubeInput;
             iceCubePrice = .05;
@@ -81,6 +81,9 @@ namespace LemonadeStand
             Console.WriteLine("You bought " + iceCubeBought + " ice cubes for " + iceCubePriceTotal + " dollar(s).");
 
             Console.WriteLine("Your wallet balance is now " + newWalletBalance + " dollars.");
+            Console.WriteLine();
+
+            CurrentInventory();
             Console.WriteLine("----------------------------------------------------");
 
             return newWalletBalance;
@@ -90,7 +93,7 @@ namespace LemonadeStand
         public double PurchaseCupsofSugar()
         {
             GetWalletBalance();
-            Console.WriteLine("Please enter how many cups of sugar you would like to buy: 10 cents each ");
+            Console.WriteLine("Please enter how many cups of sugar you would like to buy: 10 cents each! ");
             cupsOfSugarInput = Convert.ToInt32(Console.ReadLine());
             cupsOfSugarBought = cupsOfSugarInput;
             cupsOfSugarPrice = .10;
@@ -100,6 +103,9 @@ namespace LemonadeStand
             Console.WriteLine("You bought " + cupsOfSugarBought + " cups of sugar for " + cupsOfSugarPriceTotal + " dollar(s).");
 
             Console.WriteLine("Your wallet balance is now " + newWalletBalance + " dollars.");
+            Console.WriteLine();
+
+            CurrentInventory();
             Console.WriteLine("----------------------------------------------------");
 
             return newWalletBalance;
@@ -109,7 +115,7 @@ namespace LemonadeStand
         {
 
             GetWalletBalance();
-            Console.WriteLine("Please enter how many lemons you would like to buy: 6 cents each ");
+            Console.WriteLine("Please enter how many lemons you would like to buy: 6 cents each! ");
             lemonsInput = Convert.ToInt32(Console.ReadLine());
             lemonsBought = lemonsInput;
             lemonsPrice = .06;
@@ -119,19 +125,54 @@ namespace LemonadeStand
             Console.WriteLine("You bought " + lemonsBought + " lemons for " + lemonsPriceTotal + " dollar(s).");
 
             Console.WriteLine("Your wallet balance is now " + newWalletBalance + " dollars.");
+            Console.WriteLine();
+
+            CurrentInventory();
             Console.WriteLine("----------------------------------------------------");
+            CurrentInventory();
 
             return newWalletBalance;
         }
 
-
-
-        public double PurchaseGoods()
+        public void CurrentInventory()
         {
+            Console.WriteLine("Cups Total: " + cupsBought);
+            Console.WriteLine("Ice Cube Total: " + iceCubeBought);
+            Console.WriteLine("Cups of Sugar Total: " + cupsOfSugarBought);
+            Console.WriteLine("Lemons Total: " + lemonsBought);
+        }
+
+        public void PurchasedGoods()
+        {
+            Store purchase = new Store();
+            purchase.PurchaseCups();
+            purchase.PurchaseIceCubes();
+            purchase.PurchaseCupsofSugar();
+            purchase.PurchaseLemons();
+
+            
+            //Console.WriteLine("Cups Total: "+cupsBought);
+            //Console.WriteLine("Ice Cube Total: "+iceCubeBought);
+            //Console.WriteLine("Cups of Sugar Total: "+cupsOfSugarBought);
+            //Console.WriteLine("Lemons Total: "+lemonsBought);
+  
+        }
+
+        public void StoreOperations()
+        {
+            Console.WriteLine("1.Purchase more items");
             
 
-            return totalAmountForGoods;
         }
+
+        //Pitcher
+            //1 pitcher = 6 cups
+            //1 pitcher = 2 cups of sugar
+            //1 pitcher = 4 lemons
+                //1 cup1 = 1 ice cube
+
+
+
 
     }
 }
