@@ -10,19 +10,25 @@ namespace LemonadeStand
     {
         static void Main(string[] args)
         {
-            Weather tempGenerator = new Weather();
-            tempGenerator.TemperatureGenerator();
+            //Weather tempGenerator = new Weather();
+            //tempGenerator.TemperatureGenerator();
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            Customer potentialCustomers = new Customer();
-            potentialCustomers.GetPotentialCustomerNumber();
+            //Customer potentialCustomers = new Customer();
+            //potentialCustomers.GetPotentialCustomerNumber();
 
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            Weather newCondition = new Weather();
-            newCondition.WeatherConditionGenerator(); 
+            //Weather newCondition = new Weather();
+            //newCondition.WeatherConditionGenerator();
+
+            Store purchase = new Store();
+            purchase.PurchaseCups();
+            purchase.PurchaseIceCubes();
+            purchase.PurchaseCupsofSugar();
+            purchase.PurchaseLemons();
 
         }
     }
