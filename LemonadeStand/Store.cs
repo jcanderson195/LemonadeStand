@@ -8,6 +8,7 @@ namespace LemonadeStand
 {
     class Store
     {
+
         public double walletBalance;
         public double newWalletBalance;
         public int cupsInput;
@@ -26,7 +27,15 @@ namespace LemonadeStand
         public int lemonsBought;
         public double lemonsPriceTotal;
         public double lemonsPrice;
+
         
+
+        
+
+
+        
+
+
 
         public Store()
         {
@@ -35,6 +44,8 @@ namespace LemonadeStand
             //purchase ice cubes function (insert: user enters amount of ice cubes, that is multiplied by pre-determined amount($) for ice cubes, thats subtracted from money balance)
             //purchase cups of sugar function (insert: user enters amount of cups of sugar, that is multiplied by pre-determined amount($) for cups of sugar, thats subtracted from money balance)
             //purchase lemons function (insert: user enters amount of lemons, that is multiplied by pre-determined amount($) for lemons, thats subtracted from money balance)
+
+            
         }
 
         
@@ -47,8 +58,11 @@ namespace LemonadeStand
 
         public double PurchaseCups()
         {
-            //work out function for package of cups instead of individual
+            
             GetWalletBalance();
+            Console.WriteLine("Note: 1 pitcher = 6 cups. 1 pitcher needs 2 cups of sugar and 4 lemons. Every cup needs 1 ice cube.");
+            Console.WriteLine();
+
             Console.WriteLine("Please enter how many cups you would like to buy: 5 cents each! ");
             cupsInput = Convert.ToInt32(Console.ReadLine());
             cupsBought = cupsInput;
@@ -70,6 +84,9 @@ namespace LemonadeStand
         public double PurchaseIceCubes()
         {
             GetWalletBalance();
+            Console.WriteLine("Note: 1 pitcher = 6 cups. 1 pitcher needs 2 cups of sugar and 4 lemons. Every cup needs 1 ice cube.");
+
+            Console.WriteLine();
 
             Console.WriteLine("Please enter how many ice cubes you would like to buy: 5 cents each!  ");
             iceCubeInput = Convert.ToInt32(Console.ReadLine());
@@ -93,6 +110,10 @@ namespace LemonadeStand
         public double PurchaseCupsofSugar()
         {
             GetWalletBalance();
+            Console.WriteLine("Note: 1 pitcher = 6 cups. 1 pitcher needs 2 cups of sugar and 4 lemons. Every cup needs 1 ice cube.");
+
+            Console.WriteLine();
+
             Console.WriteLine("Please enter how many cups of sugar you would like to buy: 10 cents each! ");
             cupsOfSugarInput = Convert.ToInt32(Console.ReadLine());
             cupsOfSugarBought = cupsOfSugarInput;
@@ -115,6 +136,10 @@ namespace LemonadeStand
         {
 
             GetWalletBalance();
+            Console.WriteLine("Note: 1 pitcher = 6 cups. 1 pitcher needs 2 cups of sugar and 4 lemons. Every cup needs 1 ice cube.");
+
+            Console.WriteLine();
+
             Console.WriteLine("Please enter how many lemons you would like to buy: 6 cents each! ");
             lemonsInput = Convert.ToInt32(Console.ReadLine());
             lemonsBought = lemonsInput;
@@ -140,36 +165,21 @@ namespace LemonadeStand
             Console.WriteLine("Ice Cube Total: " + iceCubeBought);
             Console.WriteLine("Cups of Sugar Total: " + cupsOfSugarBought);
             Console.WriteLine("Lemons Total: " + lemonsBought);
-        }
-
-        public void PurchasedGoods()
-        {
-            Store purchase = new Store();
-            purchase.PurchaseCups();
-            purchase.PurchaseIceCubes();
-            purchase.PurchaseCupsofSugar();
-            purchase.PurchaseLemons();
 
             
-            //Console.WriteLine("Cups Total: "+cupsBought);
-            //Console.WriteLine("Ice Cube Total: "+iceCubeBought);
-            //Console.WriteLine("Cups of Sugar Total: "+cupsOfSugarBought);
-            //Console.WriteLine("Lemons Total: "+lemonsBought);
-  
         }
 
-        public void StoreOperations()
-        {
-            Console.WriteLine("1.Purchase more items");
-            
 
-        }
+        
+        
+
+        
 
         //Pitcher
             //1 pitcher = 6 cups
             //1 pitcher = 2 cups of sugar
             //1 pitcher = 4 lemons
-                //1 cup1 = 1 ice cube
+                //1 cup = 1 ice cube
 
 
 

@@ -9,7 +9,7 @@ namespace LemonadeStand
    public class Weather
     {
         public int temperature;
-        public Random rnd = new Random();
+        
         public string weatherCondition;
         public string Hazy = "Hazy";
         public string Cloudy = "Cloudy";
@@ -17,6 +17,7 @@ namespace LemonadeStand
         public string Rainy = "Rainy";
         public int potentialCustomerNumber;
         public int resultPotentialCustomerNumber;
+        public Random rnd = new Random();
 
         public Weather()
         {
