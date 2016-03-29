@@ -8,7 +8,8 @@ namespace LemonadeStand
 {
     class Game
     {
-
+       
+       
         public Game()
         {
 
@@ -32,8 +33,8 @@ namespace LemonadeStand
             //contains flow of game
 
 
-            //insert introduction function
-            UserInterface Intro = new UserInterface();
+        //insert introduction function
+        UserInterface Intro = new UserInterface();
             Intro.Introduction();
 
             //insert day option choice function

@@ -48,7 +48,9 @@ namespace LemonadeStand
 
         public void WeatherDispaly()
         {
+           
             newCondition.WeatherConditionGenerator();
+
             newTemp.TemperatureGenerator();
             
         }
