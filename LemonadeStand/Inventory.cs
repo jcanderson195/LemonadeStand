@@ -12,60 +12,48 @@ namespace LemonadeStand
 
         Weather newCondition = new Weather();
 
+        Weather potentialCustomers = new Weather();
+        
+
         Store purchase = new Store();
 
         
         public Inventory()
         {
             //(2.)insert display current inventory and money balance
-            //Dispaly Weather for Day 1 - 7
+            //Dispaly Weather for the Day 
             //Option to go purchase more items
-            //Option to continue to Day 1-7
+            //Option to continue to Day 
         }
 
 
 
         public void PurchasedGoods()
         {
-            
+            purchase.GetWalletBalance();
             purchase.PurchaseCups();
             purchase.PurchaseIceCubes();
             purchase.PurchaseCupsofSugar();
             purchase.PurchaseLemons();
 
             Console.WriteLine();
-            newCondition.WeatherConditionGenerator();
-            newTemp.TemperatureGenerator();
-
-            Console.WriteLine("----------------------------------------------------");
-
-
-            StoreOperations();
-
+            WeatherDispaly();
             
 
-        }
-
-        public void PurchasedGoodsSecondRound()
-        {
-
-            purchase.PurchaseCupsSecondRound();
-            purchase.PurchaseIceCubes();
-            purchase.PurchaseCupsofSugar();
-            purchase.PurchaseLemons();
-
-            Console.WriteLine();
-            newCondition.WeatherConditionGenerator();
-            newTemp.TemperatureGenerator();
-
             Console.WriteLine("----------------------------------------------------");
-
 
             StoreOperations();
 
-
-
         }
+
+        public void WeatherDispaly()
+        {
+            newCondition.WeatherConditionGenerator();
+            newTemp.TemperatureGenerator();
+            
+        }
+
+        
 
         public void StoreOperations()
         {
@@ -84,11 +72,11 @@ namespace LemonadeStand
 
             if (choice == 1)
             {
-                PurchasedGoodsSecondRound();
+                PurchasedGoods();
             }
             else if (choice == 2)
             {
-                //isert continue to Day function
+                //insert continue to Day function
             }
             else if (choice == 3)
             {

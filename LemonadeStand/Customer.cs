@@ -25,9 +25,6 @@ namespace LemonadeStand
 
         public Customer()
         {
-            
-   
-            temperature = rnd.Next(50, 101);
             lemonadePrice = Convert.ToDouble(Console.ReadLine());
 
         }
@@ -35,7 +32,7 @@ namespace LemonadeStand
         public void GetPotentialCustomerNumber()
         {
 
-            retrievePotentialCustomerNum.TemperatureGenerator();
+            retrievePotentialCustomerNum.PotentialCustomerGenerator();
 
         }
 
@@ -61,8 +58,13 @@ namespace LemonadeStand
 
         }
 
+        
+            
+
         public void ThirstyCustomer()
         {
+            temperature = rnd.Next(50, 101);
+
             if (temperature >= 50 && lemonadePrice <= .70)
             {
                 //insert buy cup function w/ randomizer for 1-3 cups

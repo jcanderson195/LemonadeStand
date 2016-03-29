@@ -43,14 +43,12 @@ namespace LemonadeStand
 
         public double PurchaseCups()
         {
-
-            GetWalletBalance();
             Console.WriteLine("Note: 1 pitcher = 6 cups. 1 pitcher needs 2 cups of sugar and 4 lemons. Every cup needs 1 ice cube.");
             Console.WriteLine();
 
             Console.WriteLine("Please enter how many cups you would like to buy: 5 cents each! ");
             cupsInput = Convert.ToInt32(Console.ReadLine());
-            cupsBought = cupsInput;
+            cupsBought += cupsInput;
             cupsPrice = 0.05;
             cupsPriceTotal = cupsInput * cupsPrice;
             newWalletBalance = walletBalance - cupsPriceTotal;
@@ -66,41 +64,18 @@ namespace LemonadeStand
 
         }
 
-        public double PurchaseCupsSecondRound()
-        {
-
-            GetWalletBalance();
-            Console.WriteLine("Note: 1 pitcher = 6 cups. 1 pitcher needs 2 cups of sugar and 4 lemons. Every cup needs 1 ice cube.");
-            Console.WriteLine();
-
-            Console.WriteLine("Please enter how many cups you would like to buy: 5 cents each! ");
-            cupsInput = Convert.ToInt32(Console.ReadLine());
-            cupsBought = cupsInput;
-            cupsPrice = 0.05;
-            cupsPriceTotal = cupsInput * cupsPrice;
-            newWalletBalance = newWalletBalance - cupsPriceTotal;
-
-            Console.WriteLine("You bought " + cupsBought + " cups for " + cupsPriceTotal + " dollar(s).");
-
-            Console.WriteLine("Your wallet balance is now " + newWalletBalance + " dollar(s).");
-            Console.WriteLine();
-
-            CurrentInventory();
-            Console.WriteLine("----------------------------------------------------");
-            return newWalletBalance;
-
-        }
+        
 
         public double PurchaseIceCubes()
         {
-            GetWalletBalance();
+
             Console.WriteLine("Note: 1 pitcher = 6 cups. 1 pitcher needs 2 cups of sugar and 4 lemons. Every cup needs 1 ice cube.");
 
             Console.WriteLine();
 
             Console.WriteLine("Please enter how many ice cubes you would like to buy: 5 cents each!  ");
             iceCubeInput = Convert.ToInt32(Console.ReadLine());
-            iceCubeBought = iceCubeInput;
+            iceCubeBought += iceCubeInput;
             iceCubePrice = .05;
             iceCubePriceTotal = iceCubeInput * iceCubePrice;
             newWalletBalance = newWalletBalance - iceCubePriceTotal;
@@ -119,14 +94,14 @@ namespace LemonadeStand
 
         public double PurchaseCupsofSugar()
         {
-            GetWalletBalance();
+
             Console.WriteLine("Note: 1 pitcher = 6 cups. 1 pitcher needs 2 cups of sugar and 4 lemons. Every cup needs 1 ice cube.");
 
             Console.WriteLine();
 
             Console.WriteLine("Please enter how many cups of sugar you would like to buy: 10 cents each! ");
             cupsOfSugarInput = Convert.ToInt32(Console.ReadLine());
-            cupsOfSugarBought = cupsOfSugarInput;
+            cupsOfSugarBought += cupsOfSugarInput;
             cupsOfSugarPrice = .10;
             cupsOfSugarPriceTotal = cupsOfSugarInput * cupsOfSugarPrice;
             newWalletBalance = newWalletBalance - cupsOfSugarPriceTotal;
@@ -145,14 +120,14 @@ namespace LemonadeStand
         public double PurchaseLemons()
         {
 
-            GetWalletBalance();
+
             Console.WriteLine("Note: 1 pitcher = 6 cups. 1 pitcher needs 2 cups of sugar and 4 lemons. Every cup needs 1 ice cube.");
 
             Console.WriteLine();
 
             Console.WriteLine("Please enter how many lemons you would like to buy: 6 cents each! ");
             lemonsInput = Convert.ToInt32(Console.ReadLine());
-            lemonsBought = lemonsInput;
+            lemonsBought += lemonsInput;
             lemonsPrice = .06;
             lemonsPriceTotal = lemonsInput * lemonsPrice;
             newWalletBalance = newWalletBalance - lemonsPriceTotal;
@@ -175,7 +150,6 @@ namespace LemonadeStand
             Console.WriteLine("Ice Cube Total: " + iceCubeBought);
             Console.WriteLine("Cups of Sugar Total: " + cupsOfSugarBought);
             Console.WriteLine("Lemons Total: " + lemonsBought);
-
 
         }
 
