@@ -8,27 +8,27 @@ namespace LemonadeStand
 {
     public class Customer
     {
-        
+        public int temperature;
+
+        public Random rnd = new Random();
         Weather retrievePotentialCustomerNum = new Weather();
+
+        public double lemonadePrice;
+
+        public string weatherCondition;
+        public string Hazy = "Hazy";
+        public string Cloudy = "Cloudy";
+        public string Sunny = "Sunny";
+        public string Rainy = "Rainy";
+        public double newWalletBalance;
+
 
         public Customer()
         {
-            //Customer
-                //generate number between 100-200 customers to walk through based off temperature
-                //create personality child classes from customer parent class
-                    //Thirsty customer
-                         //if temperature is >= 50 AND price is <= .70 (buys a random number of cups of lemonade between 1-3)
-                        // else if temperature is >= 50 AND >=.71 (won't buy cup of lemonade)
-                    //Weather dependent customer
-                        //if temperature is >= 75 AND weather = sunny (buys a random number of cups of lemonade between 1-3)
-                        //else if temperature is >= 75 AND weather = cloudy (buys 1 cup)
-                        //else if temperature is >= 75 AND weather = Hazy (won't buy cup)
-                        //else if temperature is >= 75 AND weather = rainy (won't buy cup)
-                        //else if temperature is <= 75 (won't buy cup)
-                    //Cheap customer 
-                        //if temperature is >= 60 AND weather = sunny AND price <=.25 (buys a random number of cups of lemonade between 1-3)
-                        //else if temperature is >= 60 AND price >= .26 (won't buy cup)      
-                    //generate random number of each customer type from number of customers to actually buy lemonade
+            
+   
+            temperature = rnd.Next(50, 101);
+            lemonadePrice = Convert.ToDouble(Console.ReadLine());
 
         }
 
@@ -36,9 +36,79 @@ namespace LemonadeStand
         {
 
             retrievePotentialCustomerNum.TemperatureGenerator();
-            
+
         }
-        
-        
+
+        public void WeatherConditionGenerator()
+        {
+            int weatherCondition = rnd.Next(1, 5);
+
+            switch (weatherCondition)
+            {
+                case 1:
+                    Console.WriteLine(Hazy);
+                    break;
+                case 2:
+                    Console.WriteLine(Cloudy);
+                    break;
+                case 3:
+                    Console.WriteLine(Sunny);
+                    break;
+                case 4:
+                    Console.WriteLine(Rainy);
+                    break;
+            }
+
+        }
+
+        public void ThirstyCustomer()
+        {
+            if (temperature >= 50 && lemonadePrice <= .70)
+            {
+                //insert buy cup function w/ randomizer for 1-3 cups
+            }
+            else if (temperature >= 50 && lemonadePrice >= .71)
+            {
+                //insert function for not buying cup
+            }
+        }
+
+        public void WeatherDependantCustomer()
+        {
+            if (temperature >= 75 && weatherCondition == Sunny)
+            {
+                //insert buy cup function w/ randomizer for 1-3 cups
+            }
+            else if (temperature >= 75 && weatherCondition == Cloudy)
+            {
+                //insert function to buy 1 cup
+            }
+            else if (temperature >= 75 && weatherCondition == Hazy)
+            {
+                //insert function to not buy cup
+            }
+            else if (temperature >= 75 && weatherCondition == Rainy)
+            {
+                //insert function to not buy cup
+            }
+            else if (temperature <= 74)
+            {
+                //insert function to not buy cup
+            }
+        }
+
+        public void CheapCustomer()
+        {
+
+            if (temperature >= 60 && weatherCondition == Sunny && lemonadePrice <= .25)
+            {
+                //insert buy cup function w/ randomizer for 1-3 cups
+            }
+            else if (temperature >= 60 && lemonadePrice >= .26)
+            {
+                //insert function to not buy cups
+            }
+        }
+
     }
 }

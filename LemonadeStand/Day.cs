@@ -8,7 +8,9 @@ namespace LemonadeStand
 {
     class Day
     {
-
+        Inventory newStore = new Inventory();
+        
+        public double lemonadePrice;
         public Day()
         {
             //contains functions regarding what day option you choose, what day number you are currently on, etc.
@@ -28,7 +30,8 @@ namespace LemonadeStand
 
             if (choice == 1)
             {
-                //insert function for store operation
+                Console.WriteLine("----------------------------------------------------");
+                newStore.PurchasedGoods();
             }
             else if (choice == 2)
             {
@@ -39,11 +42,55 @@ namespace LemonadeStand
             {
                 Console.WriteLine("I'm sorry I don't recognize that command. Please type 1 or 2 for your answer!");
                 DayOption();
-
             }
-
         }
+            
+
+            public void Day1()
+        {
+            Console.WriteLine("Please enter how much you would like to charge for lemonade today: ");
+            lemonadePrice = Convert.ToDouble(Console.ReadLine());
+        }
+
+        public void Day2()
+        {
+            Console.WriteLine("Please enter how much you would like to charge for lemonade today: ");
+            lemonadePrice = Convert.ToDouble(Console.ReadLine());
+        }
+
+        public void Day3()
+        {
+            Console.WriteLine("Please enter how much you would like to charge for lemonade today: ");
+            lemonadePrice = Convert.ToDouble(Console.ReadLine());
+        }
+
+        public void Day4()
+        {
+            Console.WriteLine("Please enter how much you would like to charge for lemonade today: ");
+            lemonadePrice = Convert.ToDouble(Console.ReadLine());
+        }
+
+        public void Day5()
+        {
+            Console.WriteLine("Please enter how much you would like to charge for lemonade today: ");
+            lemonadePrice = Convert.ToDouble(Console.ReadLine());
+        }
+
+        public void Day6()
+        {
+            Console.WriteLine("Please enter how much you would like to charge for lemonade today: ");
+            lemonadePrice = Convert.ToDouble(Console.ReadLine());
+        }
+
+        public void Day7()
+        {
+            Console.WriteLine("Please enter how much you would like to charge for lemonade today: ");
+            lemonadePrice = Convert.ToDouble(Console.ReadLine());
+        }
+
+
+    }
 
         
     }
-}
+

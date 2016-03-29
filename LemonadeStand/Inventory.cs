@@ -46,6 +46,27 @@ namespace LemonadeStand
 
         }
 
+        public void PurchasedGoodsSecondRound()
+        {
+
+            purchase.PurchaseCupsSecondRound();
+            purchase.PurchaseIceCubes();
+            purchase.PurchaseCupsofSugar();
+            purchase.PurchaseLemons();
+
+            Console.WriteLine();
+            newCondition.WeatherConditionGenerator();
+            newTemp.TemperatureGenerator();
+
+            Console.WriteLine("----------------------------------------------------");
+
+
+            StoreOperations();
+
+
+
+        }
+
         public void StoreOperations()
         {
 
@@ -63,7 +84,7 @@ namespace LemonadeStand
 
             if (choice == 1)
             {
-                PurchasedGoods();
+                PurchasedGoodsSecondRound();
             }
             else if (choice == 2)
             {

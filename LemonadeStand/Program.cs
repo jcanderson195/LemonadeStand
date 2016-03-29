@@ -10,10 +10,10 @@ namespace LemonadeStand
     {
         static void Main(string[] args)
         {
-            
 
-            Inventory newPurchase = new Inventory();
-            newPurchase.PurchasedGoods();
+
+            Game newGame = new Game();
+            newGame.GameFlow();
 
             
 

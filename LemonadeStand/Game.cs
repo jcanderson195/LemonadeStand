@@ -33,11 +33,28 @@ namespace LemonadeStand
 
 
             //insert introduction function
-
+            UserInterface Intro = new UserInterface();
+            Intro.Introduction();
 
             //insert day option choice function
+            Day weekSelection = new Day();
+            weekSelection.DayOption();
 
 
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             //(1.)insert store purchasing function(s) including current balance for money to purchase goods (money balance decreases as you purchase goods)
             //purchase cups function (insert: user enters amount of cups, that is multiplied by pre-determined amount($) for cups, thats subtracted from money balance)
             //purchase ice cubes function (insert: user enters amount of ice cubes, that is multiplied by pre-determined amount($) for ice cubes, thats subtracted from money balance)
