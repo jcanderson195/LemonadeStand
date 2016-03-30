@@ -27,13 +27,14 @@ namespace LemonadeStand
         public int lemonsBought;
         public double lemonsPriceTotal;
         public double lemonsPrice;
-
+        public double lemonadePriceUserInput;
+        public double lemonadePrice;
+        public double profit;
 
         public Store()
         {
 
         }
-
 
         public double GetWalletBalance()
         {
@@ -43,7 +44,8 @@ namespace LemonadeStand
 
         public double PurchaseCups()
         {
-            Console.WriteLine("Note: 1 pitcher = 6 cups. 1 pitcher needs 2 cups of sugar and 4 lemons. Every cup needs 1 ice cube.");
+            Console.WriteLine("Note: 1 cup needs 2 cups of sugar, 2 lemons, and 1 ice cube.");
+
             Console.WriteLine();
 
             Console.WriteLine("Please enter how many cups you would like to buy: 5 cents each! ");
@@ -69,7 +71,7 @@ namespace LemonadeStand
         public double PurchaseIceCubes()
         {
 
-            Console.WriteLine("Note: 1 pitcher = 6 cups. 1 pitcher needs 2 cups of sugar and 4 lemons. Every cup needs 1 ice cube.");
+            Console.WriteLine("Note: 1 cup needs 2 cups of sugar, 2 lemons, and 1 ice cube.");
 
             Console.WriteLine();
 
@@ -95,7 +97,7 @@ namespace LemonadeStand
         public double PurchaseCupsofSugar()
         {
 
-            Console.WriteLine("Note: 1 pitcher = 6 cups. 1 pitcher needs 2 cups of sugar and 4 lemons. Every cup needs 1 ice cube.");
+            Console.WriteLine("Note: 1 cup needs 2 cups of sugar, 2 lemons, and 1 ice cube.");
 
             Console.WriteLine();
 
@@ -121,7 +123,7 @@ namespace LemonadeStand
         {
 
 
-            Console.WriteLine("Note: 1 pitcher = 6 cups. 1 pitcher needs 2 cups of sugar and 4 lemons. Every cup needs 1 ice cube.");
+            Console.WriteLine("Note: 1 cup needs 2 cups of sugar, 2 lemons, and 1 ice cube.");
 
             Console.WriteLine();
 
@@ -153,12 +155,31 @@ namespace LemonadeStand
 
         }
 
-        public void Pitcher()
+        public double LemonadePrice()
         {
-            int pitcher = (cupsBought - 6) - (cupsOfSugarBought - 2) - (lemonsBought - 4) - (iceCubeBought - 6);
+            lemonadePriceUserInput = Convert.ToDouble(Console.ReadLine());
+            lemonadePrice = lemonadePriceUserInput;
+            return lemonadePrice;
+        }
+        
+
+        public void BuyOneCupLemonade()
+        {
+            profit = newWalletBalance + lemonadePrice;
+           int oneCup = (cupsBought - 1) - (cupsOfSugarBought - 2) - (lemonsBought - 2) - (iceCubeBought - 1);
 
         }
 
+        public void NoLemonadeBought()
+        {
+            profit = newWalletBalance + 0;
+        }
+
+        public double ResultsFromDay()
+        {
+            newWalletBalance = newWalletBalance - profit; 
+            return newWalletBalance;
+        }
 
 
 

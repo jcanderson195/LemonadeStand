@@ -13,11 +13,14 @@ namespace LemonadeStand
         Weather newCondition = new Weather();
 
         Weather potentialCustomers = new Weather();
-        
+
 
         Store purchase = new Store();
 
-        
+        Day newDay = new Day();
+
+
+
         public Inventory()
         {
             //(2.)insert display current inventory and money balance
@@ -38,25 +41,12 @@ namespace LemonadeStand
 
             Console.WriteLine();
             WeatherDispaly();
-            
 
             Console.WriteLine("----------------------------------------------------");
 
             StoreOperations();
 
         }
-
-        public void WeatherDispaly()
-        {
-           
-            newCondition.WeatherConditionGenerator();
-
-            newTemp.TemperatureGenerator();
-            
-        }
-
-        
-
         public void StoreOperations()
         {
 
@@ -78,7 +68,7 @@ namespace LemonadeStand
             }
             else if (choice == 2)
             {
-                //insert continue to Day function
+                newDay.Day1();
             }
             else if (choice == 3)
             {
@@ -94,5 +84,13 @@ namespace LemonadeStand
             }
         }
 
+        public void WeatherDispaly()
+        {
+
+            newCondition.WeatherConditionGenerator();
+
+            newTemp.TemperatureGenerator();
+
+        }
     }
 }

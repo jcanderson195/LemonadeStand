@@ -34,12 +34,12 @@ namespace LemonadeStand
 
 
         //insert introduction function
-        UserInterface Intro = new UserInterface();
+            UserInterface Intro = new UserInterface();
             Intro.Introduction();
 
             //insert day option choice function
-            Day weekSelection = new Day();
-            weekSelection.DayOption();
+            Day daySelection = new Day();
+            daySelection.DayOption();
 
 
             

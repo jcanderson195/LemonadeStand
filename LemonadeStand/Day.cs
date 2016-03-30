@@ -8,9 +8,16 @@ namespace LemonadeStand
 {
     class Day
     {
-        Inventory newStore = new Inventory();
         
-        public double lemonadePrice;
+        Store priceOfLemonade = new Store();
+
+        Weather potentialCustomerNum = new Weather();
+        Weather PC100 = new Weather();
+        Weather PC150 = new Weather();
+        Weather PC175 = new Weather();
+        Weather PC200 = new Weather();
+
+        Store dayResults = new Store();
         public Day()
         {
             //contains functions regarding what day option you choose, what day number you are currently on, etc.
@@ -31,6 +38,7 @@ namespace LemonadeStand
             if (choice == 1)
             {
                 Console.WriteLine("----------------------------------------------------");
+                Inventory newStore = new Inventory();
                 newStore.PurchasedGoods();
             }
             else if (choice == 2)
@@ -48,44 +56,58 @@ namespace LemonadeStand
 
             public void Day1()
         {
-            Console.WriteLine("Please enter how much you would like to charge for lemonade today: ");
-            lemonadePrice = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Please enter how much you would like to charge for lemonade today in decimal form: ");
+            priceOfLemonade.LemonadePrice();
+
+            dayResults.ResultsFromDay();
         }
 
         public void Day2()
         {
-            Console.WriteLine("Please enter how much you would like to charge for lemonade today: ");
-            lemonadePrice = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Please enter how much you would like to charge for lemonade today in decimal form: ");
+            priceOfLemonade.LemonadePrice();
+
+            dayResults.ResultsFromDay();
         }
 
         public void Day3()
         {
-            Console.WriteLine("Please enter how much you would like to charge for lemonade today: ");
-            lemonadePrice = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Please enter how much you would like to charge for lemonade today in decimal form: ");
+            priceOfLemonade.LemonadePrice();
+
+            dayResults.ResultsFromDay();
         }
 
         public void Day4()
         {
-            Console.WriteLine("Please enter how much you would like to charge for lemonade today: ");
-            lemonadePrice = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Please enter how much you would like to charge for lemonade today in decimal form: ");
+            priceOfLemonade.LemonadePrice();
+
+            dayResults.ResultsFromDay();
         }
 
         public void Day5()
         {
-            Console.WriteLine("Please enter how much you would like to charge for lemonade today: ");
-            lemonadePrice = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Please enter how much you would like to charge for lemonade today in decimal form: ");
+            priceOfLemonade.LemonadePrice();
+
+            dayResults.ResultsFromDay();
         }
 
         public void Day6()
         {
-            Console.WriteLine("Please enter how much you would like to charge for lemonade today: ");
-            lemonadePrice = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Please enter how much you would like to charge for lemonade today in decimal form: ");
+            priceOfLemonade.LemonadePrice();
+
+            dayResults.ResultsFromDay();
         }
 
         public void Day7()
         {
-            Console.WriteLine("Please enter how much you would like to charge for lemonade today: ");
-            lemonadePrice = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Please enter how much you would like to charge for lemonade today in decimal form: ");
+            priceOfLemonade.LemonadePrice();
+
+            dayResults.ResultsFromDay();
         }
 
 
