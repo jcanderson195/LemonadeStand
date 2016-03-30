@@ -31,66 +31,6 @@ namespace LemonadeStand
 
 
 
-        public void PurchasedGoods()
-        {
-            purchase.GetWalletBalance();
-            purchase.PurchaseCups();
-            purchase.PurchaseIceCubes();
-            purchase.PurchaseCupsofSugar();
-            purchase.PurchaseLemons();
-
-            Console.WriteLine();
-            WeatherDispaly();
-
-            Console.WriteLine("----------------------------------------------------");
-
-            StoreOperations();
-
-        }
-        public void StoreOperations()
-        {
-
-            Console.WriteLine("Please choose what you would like to do: ");
-
-            Console.WriteLine();
-
-            Console.WriteLine("1. Purchase more items");
-            Console.WriteLine("2. Continue to Day");
-            Console.WriteLine("3. Exit");
-
-            Console.WriteLine("----------------------------------------------------");
-
-            int choice = Convert.ToInt32(Console.ReadLine());
-
-            if (choice == 1)
-            {
-                PurchasedGoods();
-            }
-            else if (choice == 2)
-            {
-                newDay.Day1();
-            }
-            else if (choice == 3)
-            {
-                Console.WriteLine("THANK YOU FOR PLAYING LEMONADE STAND!");
-                Environment.Exit(0);
-            }
-            else
-            {
-                Console.WriteLine("I'm sorry. I don't recognize that command! Please enter the numerical value associated with your choice!");
-                Console.WriteLine("----------------------------------------------------");
-
-                StoreOperations();
-            }
-        }
-
-        public void WeatherDispaly()
-        {
-
-            newCondition.WeatherConditionGenerator();
-
-            newTemp.TemperatureGenerator();
-
-        }
+        
     }
 }

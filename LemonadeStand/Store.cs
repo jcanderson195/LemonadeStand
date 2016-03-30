@@ -8,37 +8,46 @@ namespace LemonadeStand
 {
     class Store
     {
-
+        
         public double walletBalance;
         public double newWalletBalance;
+
         public int cupsInput;
         public int cupsBought;
         public double cupsPriceTotal;
         public double cupsPrice;
+
         public int iceCubeInput;
         public int iceCubeBought;
         public double iceCubePriceTotal;
         public double iceCubePrice;
+
         public int cupsOfSugarInput;
         public int cupsOfSugarBought;
         public double cupsOfSugarPriceTotal;
         public double cupsOfSugarPrice;
+
         public int lemonsInput;
         public int lemonsBought;
         public double lemonsPriceTotal;
         public double lemonsPrice;
+
         public double lemonadePriceUserInput;
         public double lemonadePrice;
         public double profit;
 
+
+        Weather newWeatherDisplay = new Weather();
+
+
         public Store()
         {
-
+            walletBalance = 30.00;
         }
 
         public double GetWalletBalance()
         {
-            walletBalance = 30.00;
+            
             return newWalletBalance;
         }
 
@@ -60,7 +69,7 @@ namespace LemonadeStand
             Console.WriteLine("Your wallet balance is now " + newWalletBalance + " dollar(s).");
             Console.WriteLine();
 
-            CurrentInventory();
+            PlayerCurrentInventory();
             Console.WriteLine("----------------------------------------------------");
             return newWalletBalance;
 
@@ -87,7 +96,7 @@ namespace LemonadeStand
             Console.WriteLine("Your wallet balance is now " + newWalletBalance + " dollars.");
             Console.WriteLine();
 
-            CurrentInventory();
+            PlayerCurrentInventory();
             Console.WriteLine("----------------------------------------------------");
 
             return newWalletBalance;
@@ -113,7 +122,7 @@ namespace LemonadeStand
             Console.WriteLine("Your wallet balance is now " + newWalletBalance + " dollars.");
             Console.WriteLine();
 
-            CurrentInventory();
+            PlayerCurrentInventory();
             Console.WriteLine("----------------------------------------------------");
 
             return newWalletBalance;
@@ -121,7 +130,6 @@ namespace LemonadeStand
 
         public double PurchaseLemons()
         {
-
 
             Console.WriteLine("Note: 1 cup needs 2 cups of sugar, 2 lemons, and 1 ice cube.");
 
@@ -139,14 +147,14 @@ namespace LemonadeStand
             Console.WriteLine("Your wallet balance is now " + newWalletBalance + " dollars.");
             Console.WriteLine();
 
-            CurrentInventory();
+            PlayerCurrentInventory();
             Console.WriteLine("----------------------------------------------------");
-            CurrentInventory();
+            PlayerCurrentInventory();
 
             return newWalletBalance;
         }
 
-        public void CurrentInventory()
+        public void PlayerCurrentInventory()
         {
             Console.WriteLine("Cups Total: " + cupsBought);
             Console.WriteLine("Ice Cube Total: " + iceCubeBought);
@@ -155,6 +163,60 @@ namespace LemonadeStand
 
         }
 
+        public void PurchasedGoods()
+        {
+            GetWalletBalance();
+            PurchaseCups();
+            PurchaseIceCubes();
+            PurchaseCupsofSugar();
+            PurchaseLemons();
+
+            Console.WriteLine();
+            newWeatherDisplay.WeatherDisplay();
+
+            Console.WriteLine("----------------------------------------------------");
+
+            StoreOperations();
+
+        }
+        public void StoreOperations()
+        {
+
+            Console.WriteLine("Please choose what you would like to do: ");
+
+            Console.WriteLine();
+
+            Console.WriteLine("1. Purchase more items");
+            Console.WriteLine("2. Continue to Day");
+            Console.WriteLine("3. Exit");
+
+            Console.WriteLine("----------------------------------------------------");
+
+            int choice = Convert.ToInt32(Console.ReadLine());
+
+            if (choice == 1)
+            {
+                PurchasedGoods();
+            }
+            else if (choice == 2)
+            {
+                
+            }
+            else if (choice == 3)
+            {
+                Console.WriteLine("THANK YOU FOR PLAYING LEMONADE STAND!");
+                Environment.Exit(0);
+            }
+            else
+            {
+                Console.WriteLine("I'm sorry. I don't recognize that command! Please enter the numerical value associated with your choice!");
+                Console.WriteLine("----------------------------------------------------");
+
+                StoreOperations();
+            }
+        }
+
+        
         public double LemonadePrice()
         {
             lemonadePriceUserInput = Convert.ToDouble(Console.ReadLine());

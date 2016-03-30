@@ -38,7 +38,7 @@ namespace LemonadeStand
             if (choice == 1)
             {
                 Console.WriteLine("----------------------------------------------------");
-                Inventory newStore = new Inventory();
+                Store newStore = new Store();
                 newStore.PurchasedGoods();
             }
             else if (choice == 2)

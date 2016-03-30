@@ -13,10 +13,15 @@ namespace LemonadeStand
 
         public int potentialCustomerNumber;
         public int resultPotentialCustomerNumber;
-        Random rnd = new Random();
+        
+
+        
+        
 
         public Weather()
         {
+            
+            Random rnd = new Random();
             temperature = rnd.Next(50, 101);
             weatherCondition = rnd.Next(1, 5);
         }
@@ -53,6 +58,15 @@ namespace LemonadeStand
             {
                 Console.WriteLine(Rainy);
             }
+
+        }
+
+        public void WeatherDisplay()
+        {
+
+            WeatherConditionGenerator();
+
+            TemperatureGenerator();
 
         }
 
