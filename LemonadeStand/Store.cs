@@ -55,6 +55,9 @@ namespace LemonadeStand
 
         public double PurchaseCups()
         {
+            Console.WriteLine();
+            Console.WriteLine("Welcome to the Store!");
+            Console.WriteLine();
             Console.WriteLine("Note: 1 cup of lemonade needs 1 cup of sugar, 1 lemon, and 1 ice cube.");
 
             Console.WriteLine();
