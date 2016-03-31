@@ -39,6 +39,7 @@ namespace LemonadeStand
 
         Weather newWeatherDisplay = new Weather();
 
+        Day runDay = new Day();
 
         public Store()
         {
@@ -200,7 +201,7 @@ namespace LemonadeStand
             }
             else if (choice == 2)
             {
-                
+                runDay.DayOperation();
             }
             else if (choice == 3)
             {
@@ -239,7 +240,9 @@ namespace LemonadeStand
 
         public double ResultsFromDay()
         {
-            newWalletBalance = newWalletBalance - profit; 
+            newWalletBalance = newWalletBalance - profit;
+            Console.WriteLine("Profit made today: "+ profit);
+            PlayerCurrentInventory(); 
             return newWalletBalance;
         }
 

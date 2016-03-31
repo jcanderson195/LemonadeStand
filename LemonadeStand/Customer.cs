@@ -14,7 +14,7 @@ namespace LemonadeStand
 
         public Random rnd = new Random();
 
-        Store boughtLemonade = new Store();
+        
         Store noLemonade = new Store();
 
         public double lemonadePrice;
@@ -38,6 +38,7 @@ namespace LemonadeStand
             
             if (temperature >= 50 && lemonadePrice <= .70)
             {
+                Store boughtLemonade = new Store();
                 boughtLemonade.BuyOneCupLemonade();
                 boughtLemonade.BuyOneCupLemonade();
                 boughtLemonade.BuyOneCupLemonade();
@@ -52,12 +53,14 @@ namespace LemonadeStand
         {
             if (temperature >= 75 && weatherCondition == Sunny)
             {
+                Store boughtLemonade = new Store();
                 boughtLemonade.BuyOneCupLemonade();
                 boughtLemonade.BuyOneCupLemonade();
                 boughtLemonade.BuyOneCupLemonade();
             }
             else if (temperature >= 75 && weatherCondition == Cloudy)
             {
+                Store boughtLemonade = new Store();
                 boughtLemonade.BuyOneCupLemonade();
             }
             else if (temperature >= 75 && weatherCondition == Hazy)
@@ -78,6 +81,7 @@ namespace LemonadeStand
         {
             if (temperature >= 60 && weatherCondition == Sunny && lemonadePrice <= .25)
             {
+                Store boughtLemonade = new Store();
                 boughtLemonade.BuyOneCupLemonade();
                 boughtLemonade.BuyOneCupLemonade();
                 boughtLemonade.BuyOneCupLemonade();
@@ -143,7 +147,6 @@ namespace LemonadeStand
         public void CustomersForPC150(int temperature)
         {
             
-
             if (potentialCustomerNumber == 150)
             {
                 
