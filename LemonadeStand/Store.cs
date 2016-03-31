@@ -43,7 +43,7 @@ namespace LemonadeStand
 
         public Store()
         {
-            walletBalance = 30.00;
+            walletBalance = 200.00;
         }
 
         public double GetWalletBalance()
@@ -54,7 +54,7 @@ namespace LemonadeStand
 
         public double PurchaseCups()
         {
-            Console.WriteLine("Note: 1 cup needs 2 cups of sugar, 2 lemons, and 1 ice cube.");
+            Console.WriteLine("Note: 1 cup of lemonade needs 1 cup of sugar, 1 lemon, and 1 ice cube.");
 
             Console.WriteLine();
 
@@ -81,7 +81,7 @@ namespace LemonadeStand
         public double PurchaseIceCubes()
         {
 
-            Console.WriteLine("Note: 1 cup needs 2 cups of sugar, 2 lemons, and 1 ice cube.");
+            Console.WriteLine("Note: 1 cup of lemonade needs 1 cup of sugar, 1 lemon, and 1 ice cube.");
 
             Console.WriteLine();
 
@@ -107,7 +107,7 @@ namespace LemonadeStand
         public double PurchaseCupsofSugar()
         {
 
-            Console.WriteLine("Note: 1 cup needs 2 cups of sugar, 2 lemons, and 1 ice cube.");
+            Console.WriteLine("Note: 1 cup of lemonade needs 1 cup of sugar, 1 lemon, and 1 ice cube.");
 
             Console.WriteLine();
 
@@ -132,7 +132,7 @@ namespace LemonadeStand
         public double PurchaseLemons()
         {
 
-            Console.WriteLine("Note: 1 cup needs 2 cups of sugar, 2 lemons, and 1 ice cube.");
+            Console.WriteLine("Note: 1 cup of lemonade needs 1 cup of sugar, 1 lemon, and 1 ice cube.");
 
             Console.WriteLine();
 
@@ -150,6 +150,9 @@ namespace LemonadeStand
 
             PlayerCurrentInventory();
             Console.WriteLine("----------------------------------------------------");
+            
+            Console.WriteLine("Item Inventory");
+            Console.WriteLine();
             PlayerCurrentInventory();
 
             return newWalletBalance;
@@ -173,7 +176,7 @@ namespace LemonadeStand
             PurchaseLemons();
 
             Console.WriteLine();
-            newWeatherDisplay.WeatherDisplay();
+            //newWeatherDisplay.WeatherDisplay();
 
             Console.WriteLine("----------------------------------------------------");
 
@@ -188,7 +191,7 @@ namespace LemonadeStand
             Console.WriteLine();
 
             Console.WriteLine("1. Purchase more items");
-            Console.WriteLine("2. Continue to Day");
+            Console.WriteLine("2. Continue to Week");
             Console.WriteLine("3. Exit");
 
             Console.WriteLine("----------------------------------------------------");
@@ -229,7 +232,7 @@ namespace LemonadeStand
         public void BuyOneCupLemonade()
         {
             profit = newWalletBalance + lemonadePrice;
-           int oneCup = (cupsBought - 1) - (cupsOfSugarBought - 2) - (lemonsBought - 2) - (iceCubeBought - 1);
+           int oneCup = (cupsBought - 1) - (cupsOfSugarBought - 1) - (lemonsBought - 1) - (iceCubeBought - 1);
 
         }
 

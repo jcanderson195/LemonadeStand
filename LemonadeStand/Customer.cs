@@ -9,7 +9,6 @@ namespace LemonadeStand
     public class Customer
     {
         
-        
         public int potentialCustomerNumber;
 
         public Random rnd = new Random();
@@ -41,7 +40,7 @@ namespace LemonadeStand
                 Store boughtLemonade = new Store();
                 boughtLemonade.BuyOneCupLemonade();
                 boughtLemonade.BuyOneCupLemonade();
-                boughtLemonade.BuyOneCupLemonade();
+                
             }
             else if (temperature >= 50 && lemonadePrice >= .71)
             {
@@ -56,7 +55,7 @@ namespace LemonadeStand
                 Store boughtLemonade = new Store();
                 boughtLemonade.BuyOneCupLemonade();
                 boughtLemonade.BuyOneCupLemonade();
-                boughtLemonade.BuyOneCupLemonade();
+                
             }
             else if (temperature >= 75 && weatherCondition == Cloudy)
             {
@@ -84,7 +83,7 @@ namespace LemonadeStand
                 Store boughtLemonade = new Store();
                 boughtLemonade.BuyOneCupLemonade();
                 boughtLemonade.BuyOneCupLemonade();
-                boughtLemonade.BuyOneCupLemonade();
+                
             }
             else if (temperature >= 60 && lemonadePrice >= .26)
             {
@@ -205,8 +204,6 @@ namespace LemonadeStand
                 }
             }
         }
-
-
 
 
     }
