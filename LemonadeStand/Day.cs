@@ -54,16 +54,16 @@ namespace LemonadeStand
         public void WeekOperation()
         {
             
-            for (int day = 1; day < 7; day++)
+            Store priceOfLemonade = new Store();
+            for (int day = 1; day < 8; day++)
             {
-
+                Weather weatherDisplay = new Weather();
                 Console.WriteLine("Day "+ day);
                 Console.WriteLine();
-                Weather weatherDisplay = new Weather();
                 weatherDisplay.WeatherDisplay();
                 Console.WriteLine();
                 Console.WriteLine("Please enter how much you would like to charge for lemonade today in decimal form: ");
-                Store priceOfLemonade = new Store();
+                
                 priceOfLemonade.LemonadePrice();
 
                 Console.WriteLine("---------------------Press Enter For Day Results-------------------------------");
@@ -71,24 +71,17 @@ namespace LemonadeStand
                 Console.ReadKey();
                 Customer potentialCustomers = new Customer(priceOfLemonade);
                 potentialCustomers.PotentialCustomerGenerator(weatherDisplay.temperature);
-                //if (potentialCustomerNumber == 100)
-                //{
+                
                     potentialCustomers.CustomersForPC100(weatherDisplay.temperature);
-                //}
-                //else if (potentialCustomerNumber == 150)
-                //{
+                
                     potentialCustomers.CustomersForPC150(weatherDisplay.temperature);
-                //}
-               // else if (potentialCustomerNumber == 175)
-                //{
+                
                     potentialCustomers.CustomersForPC175(weatherDisplay.temperature);
-                //}
-                //else if (potentialCustomerNumber == 200)
-                //{
+                
                     potentialCustomers.CustomersForPC200(weatherDisplay.temperature);
-                //}
 
-                //Console.WriteLine("----------------------------------------------------");
+                Console.WriteLine("------------------------------------------------");
+                
                 Console.WriteLine("Day "+day);
                 priceOfLemonade.ResultsFromDay();
 
@@ -96,6 +89,8 @@ namespace LemonadeStand
                 Console.WriteLine("----------------------------------------------------");
 
             }
+
+            priceOfLemonade.GameEnding();
         }
 
         

@@ -35,7 +35,8 @@ namespace LemonadeStand
         public double lemonadePriceUserInput;
         public double lemonadePrice;
         public double profit;
-
+        public double totalProfit;
+        public double endResult;
 
         Weather newWeatherDisplay = new Weather();
 
@@ -200,10 +201,12 @@ namespace LemonadeStand
 
             if (choice == 1)
             {
+                Console.WriteLine("----------------------------------------------------");
                 PurchasedGoods();
             }
             else if (choice == 2)
             {
+                Console.WriteLine("----------------------------------------------------");
                 runDay.WeekOperation();
             }
             else if (choice == 3)
@@ -232,7 +235,7 @@ namespace LemonadeStand
         public double BuyOneCupLemonade()
         {
             profit += lemonadePrice;
-           int oneCup = (cupsBought - 1) - (cupsOfSugarBought - 1) - (lemonsBought - 1) - (iceCubeBought - 1);
+           int one = (cupsBought - 1) - (cupsOfSugarBought - 1) - (lemonsBought - 1) - (iceCubeBought - 1);
             return profit;
         }
 
@@ -246,10 +249,23 @@ namespace LemonadeStand
         {
             walletBalance = walletBalance + profit;
             Console.WriteLine("Profit made today: "+ profit);
-            PlayerCurrentInventory(); 
-            return walletBalance;
-        }
 
+             totalProfit += profit;
+            
+            Console.WriteLine("Total profit earned: "+totalProfit);
+
+            return totalProfit;
+        }
+        
+        public void GameEnding()
+        {
+            
+            Console.WriteLine("Thank you for playing Lemonade Stand!");
+            Console.WriteLine();
+            Console.WriteLine("At the end of the week, you made $"+totalProfit);
+             
+            Console.ReadKey();
+        }
 
 
 
