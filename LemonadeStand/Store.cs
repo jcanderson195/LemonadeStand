@@ -270,12 +270,5 @@ namespace LemonadeStand
             Console.ReadKey();
         }
 
-
-
-
-
-
-
-
     }
 }

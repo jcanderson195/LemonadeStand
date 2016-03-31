@@ -14,9 +14,7 @@ namespace LemonadeStand
 
         public Random rnd = new Random();
 
-        
-        
-
+      
         public double lemonadePrice;
 
         public string weatherCondition;

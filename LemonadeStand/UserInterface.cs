@@ -12,8 +12,6 @@ namespace LemonadeStand
         public UserInterface()
         {
 
-            //User interaction class
-
         }
 
         public void Introduction()

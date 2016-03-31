@@ -8,14 +8,7 @@ namespace LemonadeStand
 {
     class Day
     {
-        
 
-        
-
-        
-        
-        
-        
         public Day()
         {
             
@@ -23,7 +16,7 @@ namespace LemonadeStand
 
         public void DayOption()
         {
-            //class for choosing how many days you want to operate your lemonade stand
+           
             Console.WriteLine("Since this is a beta form Lemonade Stand, you only have the option to play for 7 days. Is that okay with you?");
             Console.WriteLine();
             Console.WriteLine("1. Yes");
