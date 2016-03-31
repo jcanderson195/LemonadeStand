@@ -8,8 +8,11 @@ namespace LemonadeStand
 {
     class Day
     {
-        public int potentialCustomerNumber;
+        
 
+        
+
+        
         
         
         
@@ -48,10 +51,12 @@ namespace LemonadeStand
         }
 
 
-        public void DayOperation()
+        public void WeekOperation()
         {
+            
             for (int day = 1; day < 7; day++)
             {
+
                 Console.WriteLine("Day "+ day);
                 Console.WriteLine();
                 Weather weatherDisplay = new Weather();
@@ -64,28 +69,28 @@ namespace LemonadeStand
                 Console.WriteLine("---------------------Press Enter For Day Results-------------------------------");
                 
                 Console.ReadKey();
-                Customer potentialCustomers = new Customer();
-                if (potentialCustomerNumber == 100)
-                {
-                    potentialCustomers.CustomersForPC100(69);
-                }
-                else if (potentialCustomerNumber == 150)
-                {
-                    potentialCustomers.CustomersForPC150(89);
-                }
-                else if (potentialCustomerNumber == 175)
-                {
-                    potentialCustomers.CustomersForPC175(94);
-                }
-                else if (potentialCustomerNumber == 200)
-                {
-                    potentialCustomers.CustomersForPC200(95);
-                }
+                Customer potentialCustomers = new Customer(priceOfLemonade);
+                potentialCustomers.PotentialCustomerGenerator(weatherDisplay.temperature);
+                //if (potentialCustomerNumber == 100)
+                //{
+                    potentialCustomers.CustomersForPC100(weatherDisplay.temperature);
+                //}
+                //else if (potentialCustomerNumber == 150)
+                //{
+                    potentialCustomers.CustomersForPC150(weatherDisplay.temperature);
+                //}
+               // else if (potentialCustomerNumber == 175)
+                //{
+                    potentialCustomers.CustomersForPC175(weatherDisplay.temperature);
+                //}
+                //else if (potentialCustomerNumber == 200)
+                //{
+                    potentialCustomers.CustomersForPC200(weatherDisplay.temperature);
+                //}
 
                 //Console.WriteLine("----------------------------------------------------");
                 Console.WriteLine("Day "+day);
-                Store dayResults = new Store();
-                dayResults.ResultsFromDay();
+                priceOfLemonade.ResultsFromDay();
 
                 Console.ReadKey();
                 Console.WriteLine("----------------------------------------------------");

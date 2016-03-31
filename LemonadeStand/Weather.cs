@@ -28,9 +28,8 @@ namespace LemonadeStand
 
         public void TemperatureGenerator()
         {
-            Customer newPotentialCustomers = new Customer();
+            
             Console.WriteLine(temperature + " degrees");
-            newPotentialCustomers.PotentialCustomerGenerator(temperature);
         }
 
         public void WeatherConditionGenerator()

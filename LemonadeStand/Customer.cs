@@ -8,13 +8,14 @@ namespace LemonadeStand
 {
     public class Customer
     {
-        
+       public Store newStore;
+
         public int potentialCustomerNumber;
 
         public Random rnd = new Random();
 
         
-        Store noLemonade = new Store();
+        
 
         public double lemonadePrice;
 
@@ -25,26 +26,25 @@ namespace LemonadeStand
         public string Rainy = "Rainy";
         public double newWalletBalance;
 
-        public Customer()
+        public Customer(Store NewStore)
         {
-            
 
+            newStore = NewStore;
         }
-
-        
+  
         public void ThirstyCustomer(int temperature)
         {
             
             if (temperature >= 50 && lemonadePrice <= .70)
             {
-                Store boughtLemonade = new Store();
-                boughtLemonade.BuyOneCupLemonade();
-                boughtLemonade.BuyOneCupLemonade();
                 
+                newStore.BuyOneCupLemonade();
+                newStore.BuyOneCupLemonade();
+
             }
             else if (temperature >= 50 && lemonadePrice >= .71)
             {
-                noLemonade.NoLemonadeBought();
+                newStore.NoLemonadeBought();
             }
         }
 
@@ -52,27 +52,26 @@ namespace LemonadeStand
         {
             if (temperature >= 75 && weatherCondition == Sunny)
             {
-                Store boughtLemonade = new Store();
-                boughtLemonade.BuyOneCupLemonade();
-                boughtLemonade.BuyOneCupLemonade();
-                
+
+                newStore.BuyOneCupLemonade();
+                newStore.BuyOneCupLemonade();
+
             }
             else if (temperature >= 75 && weatherCondition == Cloudy)
             {
-                Store boughtLemonade = new Store();
-                boughtLemonade.BuyOneCupLemonade();
+                newStore.BuyOneCupLemonade();
             }
             else if (temperature >= 75 && weatherCondition == Hazy)
             {
-                noLemonade.NoLemonadeBought();
+                newStore.NoLemonadeBought();
             }
             else if (temperature >= 75 && weatherCondition == Rainy)
             {
-                noLemonade.NoLemonadeBought();
+                newStore.NoLemonadeBought();
             }
             else if (temperature <= 74)
             {
-                noLemonade.NoLemonadeBought();
+                newStore.NoLemonadeBought();
             }
         }
 
@@ -80,14 +79,14 @@ namespace LemonadeStand
         {
             if (temperature >= 60 && weatherCondition == Sunny && lemonadePrice <= .25)
             {
-                Store boughtLemonade = new Store();
-                boughtLemonade.BuyOneCupLemonade();
-                boughtLemonade.BuyOneCupLemonade();
-                
+
+                newStore.BuyOneCupLemonade();
+                newStore.BuyOneCupLemonade();
+
             }
             else if (temperature >= 60 && lemonadePrice >= .26)
             {
-                noLemonade.NoLemonadeBought();
+                newStore.NoLemonadeBought();
             }
         }
 
@@ -124,8 +123,7 @@ namespace LemonadeStand
 
 
         public void CustomersForPC100(int temperarture)
-        {
-            
+        {  
             if (potentialCustomerNumber == 100)
             {
                 for (int thirstyCustomers = 0; thirstyCustomers < 30; thirstyCustomers++)

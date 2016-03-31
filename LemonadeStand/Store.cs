@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Store
+    public class Store
     {
         
         public double walletBalance;
-        public double newWalletBalance;
+        
 
         public int cupsInput;
         public int cupsBought;
@@ -49,7 +49,7 @@ namespace LemonadeStand
         public double GetWalletBalance()
         {
             
-            return newWalletBalance;
+            return walletBalance;
         }
 
         public double PurchaseCups()
@@ -63,16 +63,16 @@ namespace LemonadeStand
             cupsBought += cupsInput;
             cupsPrice = 0.05;
             cupsPriceTotal = cupsInput * cupsPrice;
-            newWalletBalance = walletBalance - cupsPriceTotal;
+            walletBalance = walletBalance - cupsPriceTotal;
 
             Console.WriteLine("You bought " + cupsBought + " cups for " + cupsPriceTotal + " dollar(s).");
 
-            Console.WriteLine("Your wallet balance is now " + newWalletBalance + " dollar(s).");
+            Console.WriteLine("Your wallet balance is now " + walletBalance + " dollar(s).");
             Console.WriteLine();
 
             PlayerCurrentInventory();
             Console.WriteLine("----------------------------------------------------");
-            return newWalletBalance;
+            return walletBalance;
 
         }
 
@@ -90,17 +90,17 @@ namespace LemonadeStand
             iceCubeBought += iceCubeInput;
             iceCubePrice = .05;
             iceCubePriceTotal = iceCubeInput * iceCubePrice;
-            newWalletBalance = newWalletBalance - iceCubePriceTotal;
+            walletBalance = walletBalance - iceCubePriceTotal;
 
             Console.WriteLine("You bought " + iceCubeBought + " ice cubes for " + iceCubePriceTotal + " dollar(s).");
 
-            Console.WriteLine("Your wallet balance is now " + newWalletBalance + " dollars.");
+            Console.WriteLine("Your wallet balance is now " + walletBalance + " dollars.");
             Console.WriteLine();
 
             PlayerCurrentInventory();
             Console.WriteLine("----------------------------------------------------");
 
-            return newWalletBalance;
+            return walletBalance;
 
         }
 
@@ -116,17 +116,17 @@ namespace LemonadeStand
             cupsOfSugarBought += cupsOfSugarInput;
             cupsOfSugarPrice = .10;
             cupsOfSugarPriceTotal = cupsOfSugarInput * cupsOfSugarPrice;
-            newWalletBalance = newWalletBalance - cupsOfSugarPriceTotal;
+            walletBalance = walletBalance - cupsOfSugarPriceTotal;
 
             Console.WriteLine("You bought " + cupsOfSugarBought + " cups of sugar for " + cupsOfSugarPriceTotal + " dollar(s).");
 
-            Console.WriteLine("Your wallet balance is now " + newWalletBalance + " dollars.");
+            Console.WriteLine("Your wallet balance is now " + walletBalance + " dollars.");
             Console.WriteLine();
 
             PlayerCurrentInventory();
             Console.WriteLine("----------------------------------------------------");
 
-            return newWalletBalance;
+            return walletBalance;
         }
 
         public double PurchaseLemons()
@@ -141,11 +141,11 @@ namespace LemonadeStand
             lemonsBought += lemonsInput;
             lemonsPrice = .06;
             lemonsPriceTotal = lemonsInput * lemonsPrice;
-            newWalletBalance = newWalletBalance - lemonsPriceTotal;
+            walletBalance = walletBalance - lemonsPriceTotal;
 
             Console.WriteLine("You bought " + lemonsBought + " lemons for " + lemonsPriceTotal + " dollar(s).");
 
-            Console.WriteLine("Your wallet balance is now " + newWalletBalance + " dollars.");
+            Console.WriteLine("Your wallet balance is now " + walletBalance + " dollars.");
             Console.WriteLine();
 
             PlayerCurrentInventory();
@@ -155,7 +155,7 @@ namespace LemonadeStand
             Console.WriteLine();
             PlayerCurrentInventory();
 
-            return newWalletBalance;
+            return walletBalance;
         }
 
         public void PlayerCurrentInventory()
@@ -204,7 +204,7 @@ namespace LemonadeStand
             }
             else if (choice == 2)
             {
-                runDay.DayOperation();
+                runDay.WeekOperation();
             }
             else if (choice == 3)
             {
@@ -229,24 +229,25 @@ namespace LemonadeStand
         }
         
 
-        public void BuyOneCupLemonade()
+        public double BuyOneCupLemonade()
         {
-            profit = newWalletBalance + lemonadePrice;
+            profit += lemonadePrice;
            int oneCup = (cupsBought - 1) - (cupsOfSugarBought - 1) - (lemonsBought - 1) - (iceCubeBought - 1);
-
+            return profit;
         }
 
-        public void NoLemonadeBought()
+        public double NoLemonadeBought()
         {
-            profit = newWalletBalance + 0;
+            profit +=  0;
+            return profit;
         }
 
         public double ResultsFromDay()
         {
-            newWalletBalance = newWalletBalance - profit;
+            walletBalance = walletBalance + profit;
             Console.WriteLine("Profit made today: "+ profit);
             PlayerCurrentInventory(); 
-            return newWalletBalance;
+            return walletBalance;
         }
 
 
